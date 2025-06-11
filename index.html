@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Himen Patel | Senior SDET Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,32 +13,46 @@
       font-family: 'Montserrat', sans-serif;
     }
     body {
-      background-color: #f9f9f9;
-      color: #333;
+      background: linear-gradient(135deg, #e8f0ff, #f5f5f5);
+      color: #2c3e50;
       line-height: 1.6;
+      transition: background 0.5s ease-in-out;
     }
     header {
-      background: #2c3e50;
+      background: linear-gradient(90deg, #2980b9, #6dd5fa);
       color: white;
-      padding: 2rem 0;
       text-align: center;
+      padding: 3rem 1rem;
+      animation: fadeInDown 1.2s ease-in-out;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
     header p {
       font-size: 1.2rem;
     }
     section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      animation: fadeIn 2s ease-in-out;
     }
     h2 {
-      border-left: 5px solid #2980b9;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-      color: #2c3e50;
+      position: relative;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #2980b9;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 50px;
+      height: 4px;
+      background: #2980b9;
+      border-radius: 10px;
     }
     .projects, .skills {
       display: grid;
@@ -47,13 +61,16 @@
     }
     .card {
       background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
       padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 1.5s ease forwards;
+      opacity: 0;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
     }
     .card h3 {
       color: #2980b9;
@@ -62,22 +79,37 @@
     .card a {
       text-decoration: none;
       color: #2980b9;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #2c3e50;
-      color: white;
-      margin-top: 3rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
     .contact {
       text-align: center;
-      margin: 2rem 0;
+      margin-top: 2rem;
     }
     .contact a {
       color: #2980b9;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #2c3e50;
+      color: white;
+      margin-top: 4rem;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
@@ -85,45 +117,45 @@
 
 <header>
   <h1>Himen Patel</h1>
-  <p>Senior SDET | Test Architect | CI/CD | Playwright | Selenium | API & Mobile Automation</p>
+  <p>Senior SDET | Test Architect | Playwright | Selenium | CI/CD | Automation Expert</p>
 </header>
 
 <section>
-  <h2>🔧 Projects</h2>
+  <h2>🚀 Projects</h2>
   <div class="projects">
     <div class="card">
       <h3>Playwright ParaBank Framework</h3>
-      <p>Full E2E test framework for online banking using Playwright + TypeScript</p>
-      <a href="https://github.com/Himen78/Febric_Automation_Playwright" target="_blank">View on GitHub →</a>
+      <p>End-to-end UI + API test automation using Playwright with TypeScript.</p>
+      <a href="https://github.com/Himen78/Febric_Automation_Playwright" target="_blank">GitHub →</a>
     </div>
     <div class="card">
       <h3>CI/CD Test Automation</h3>
-      <p>GitHub Actions pipeline to trigger tests on push, PRs and publish reports.</p>
-      <a href="https://github.com/Himen78/CI-CD-Automation-Project" target="_blank">View on GitHub →</a>
+      <p>Pipeline automation with GitHub Actions for triggering & reporting tests.</p>
+      <a href="https://github.com/Himen78/CI-CD-Automation-Project" target="_blank">GitHub →</a>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>📚 Skills & Technologies</h2>
+  <h2>🧠 Skills</h2>
   <div class="skills">
     <div class="card">Java • TypeScript • Python • JavaScript</div>
     <div class="card">Playwright • Selenium • Cypress • Appium</div>
     <div class="card">REST Assured • Postman • JMeter</div>
-    <div class="card">GitHub Actions • Jenkins • GitLab CI</div>
+    <div class="card">CI/CD: GitHub Actions • Jenkins • GitLab CI</div>
     <div class="card">Docker • Azure DevOps • Git</div>
     <div class="card">Agile • DevOps • Generative AI • Prompt Engineering</div>
   </div>
 </section>
 
 <section class="contact">
-  <h2>📫 Contact</h2>
-  <p>Email: <a href="mailto:himenpatel2011@gmail.com@gmail.com">himen.qa@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/himen-patel" target="_blank">linkedin.com/in/himenpatel</a></p>
+  <h2>📬 Contact</h2>
+  <p>Email: <a href="mailto:himenpatel2011@gmail.com">himenpatel2011@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/himen-patel" target="_blank">linkedin.com/in/himen-patel</a></p>
 </section>
 
 <footer>
-  © 2025 Himen Patel • Built with ❤️ for SDET & DevOps excellence
+  © 2025 Himen Patel • Excellence in QA Automation & Engineering 🚀
 </footer>
 
 </body>
