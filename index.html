@@ -1,162 +1,330 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Himen Patel | Senior SDET Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Himen Patel | SDET Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #2c3e50;
+      --primary: #2980b9;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --primary: #4dabf7;
+      --card-bg: #1e1e1e;
+      --shadow: rgba(255, 255, 255, 0.05);
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
     }
+
     body {
-      background: linear-gradient(135deg, #e8f0ff, #f5f5f5);
-      color: #2c3e50;
-      line-height: 1.6;
-      transition: background 0.5s ease-in-out;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
     }
+
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+
     header {
-      background: linear-gradient(90deg, #2980b9, #6dd5fa);
-      color: white;
-      text-align: center;
       padding: 3rem 1rem;
-      animation: fadeInDown 1.2s ease-in-out;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    section {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-      animation: fadeIn 2s ease-in-out;
-    }
-    h2 {
-      position: relative;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      color: #2980b9;
-    }
-    h2::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 50px;
-      height: 4px;
-      background: #2980b9;
-      border-radius: 10px;
-    }
-    .projects, .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: slideUp 1.5s ease forwards;
-      opacity: 0;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
-    }
-    .card h3 {
-      color: #2980b9;
-      margin-bottom: 0.5rem;
-    }
-    .card a {
-      text-decoration: none;
-      color: #2980b9;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-    .contact {
       text-align: center;
-      margin-top: 2rem;
+      background: linear-gradient(135deg, var(--primary), #6dd5ed);
+      color: #fff;
+      animation: fadeInDown 1s ease-in-out;
     }
-    .contact a {
-      color: #2980b9;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #2c3e50;
-      color: white;
-      margin-top: 4rem;
-    }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-40px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
-    @keyframes slideUp {
-      0% { transform: translateY(20px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 16px var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px var(--shadow);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.5rem;
+      margin: 0.2rem;
+      font-size: 0.85rem;
+    }
+
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .timeline li {
+      margin-bottom: 1rem;
+    }
+
+    .timeline span {
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    section ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.8;
+    }
+
+    section ul li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    section ul li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    blockquote {
+      border-left: 5px solid var(--primary);
+      padding-left: 1rem;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--text);
+      color: var(--bg);
+      margin-top: 3rem;
+    }
+
+    .contact {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .contact a {
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
 
+<div class="toggle" onclick="document.body.classList.toggle('dark')">🌗 Toggle Theme</div>
+
 <header>
   <h1>Himen Patel</h1>
-  <p>Senior SDET | Test Architect | Playwright | Selenium | CI/CD | Automation Expert</p>
+  <p>Senior SDET • Automation Architect • Playwright • Selenium • CI/CD • AI Testing</p>
 </header>
 
 <section>
+  <h2>👨‍💻 Profile Summary</h2>
+  <div class="card">
+    <ul>
+      <li>Senior Software Automation Engineer with 7+ years of experience in API, Web, and Mobile Automation.</li>
+      <li>Worked across domains such as Healthcare, Aviation, Telecom, and Job Portals.</li>
+      <li>Built automation frameworks from scratch using Java, Python, JavaScript, Selenium, Playwright, Cypress, and Appium.</li>
+      <li>Experienced in API automation using REST Assured and Postman for reliable backend validation.</li>
+      <li>Integrated test automation into CI/CD pipelines using Jenkins, Git, and GitLab for faster, reliable releases.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
   <h2>🚀 Projects</h2>
-  <div class="projects">
+  <div class="grid">
     <div class="card">
       <h3>Playwright ParaBank Framework</h3>
-      <p>End-to-end UI + API test automation using Playwright with TypeScript.</p>
+      <p>End-to-end automation framework for banking using Playwright + TypeScript.</p>
       <a href="https://github.com/Himen78/Febric_Automation_Playwright" target="_blank">GitHub →</a>
     </div>
     <div class="card">
-      <h3>CI/CD Test Automation</h3>
-      <p>Pipeline automation with GitHub Actions for triggering & reporting tests.</p>
+      <h3>CI/CD Test Pipeline</h3>
+      <p>GitHub Actions integrated pipeline for automated testing and reporting.</p>
       <a href="https://github.com/Himen78/CI-CD-Automation-Project" target="_blank">GitHub →</a>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>🧠 Skills</h2>
-  <div class="skills">
-    <div class="card">Java • TypeScript • Python • JavaScript</div>
-    <div class="card">Playwright • Selenium • Cypress • Appium</div>
-    <div class="card">REST Assured • Postman • JMeter</div>
-    <div class="card">CI/CD: GitHub Actions • Jenkins • GitLab CI</div>
-    <div class="card">Docker • Azure DevOps • Git</div>
-    <div class="card">Agile • DevOps • Generative AI • Prompt Engineering</div>
+  <h2>💡 Skills & Badges</h2>
+  <div class="card">
+    <span class="badge">Java</span>
+    <span class="badge">TypeScript</span>
+    <span class="badge">Selenium</span>
+    <span class="badge">Playwright</span>
+    <span class="badge">Appium</span>
+    <span class="badge">REST Assured</span>
+    <span class="badge">CI/CD</span>
+    <span class="badge">Docker</span>
+    <span class="badge">GitHub Actions</span>
+    <span class="badge">Jenkins</span>
+    <span class="badge">Azure DevOps</span>
+    <span class="badge">Generative AI</span>
   </div>
 </section>
 
-<section class="contact">
-  <h2>📬 Contact</h2>
-  <p>Email: <a href="mailto:himenpatel2011@gmail.com">himenpatel2011@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/himen-patel" target="_blank">linkedin.com/in/himen-patel</a></p>
+<section>
+  <h2>🏆 Experience & Achievements</h2>
+  <div class="card">
+    <p>With 7+ years of hands-on experience across Healthcare, Aviation, Telecommunications, and Job Portal domains, I specialize in developing and implementing automation solutions that enhance software quality, accelerate release cycles, and drive efficiency.</p>
+
+    <h3>🌟 Core Expertise:</h3>
+    <ul>
+      <li>Automation Frameworks: Selenium, Playwright, Cypress, Appium, REST Assured</li>
+      <li>Programming Languages: Java, Python, JavaScript, TypeScript</li>
+      <li>API Testing & Automation: Postman, REST Assured – Built API testing frameworks from scratch</li>
+      <li>Mobile Testing: Android & iOS (Appium, TestNG, Cucumber) – Designed end-to-end mobile automation frameworks</li>
+      <li>CI/CD & DevOps: Jenkins, GitLab, Docker, Azure – Integrated test automation into DevOps pipelines</li>
+      <li>Agile & SDLC: Scrum, Sprint Planning, Regression & Exploratory Testing</li>
+    </ul>
+
+    <h3>🏆 Key Achievements:</h3>
+    <ul>
+      <li>Multi-Domain Expertise: Delivered test automation solutions across Healthcare, Aviation, Telecom, and Job Portals, ensuring domain-specific compliance and performance standards.</li>
+      <li>Web Automation: Designed and deployed Playwright, Cypress & Selenium automation frameworks for robust cross-browser testing.</li>
+      <li>API Automation: Built Postman & REST Assured frameworks from scratch for reliable API validation and monitoring.</li>
+      <li>Mobile Automation: Developed Appium frameworks for Android & iOS with advanced reporting and real-time execution tracking.</li>
+      <li>CI/CD Integration: Integrated test suites with Jenkins & GitLab for continuous testing and faster delivery pipelines.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>📫 Get in Touch</h2>
+  <div class="card">
+    <p>Email: <a href="mailto:himenpatel2011@gmail.com">himenpatel2011@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/himen-patel" target="_blank">linkedin.com/in/himen-patel</a></p>
+  </div>
 </section>
 
 <footer>
-  © 2025 Himen Patel • Excellence in QA Automation & Engineering 🚀
+  © 2025 Himen Patel • Built with 💙 for SDET & DevOps Excellence
 </footer>
+
+<script>
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+  document.querySelector(".toggle").onclick = function () {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  };
+</script>
 
 </body>
 </html>
