@@ -3,1438 +3,625 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta
-    name="description"
-    content="Himen Patel - Senior SDET, Automation Architect and Agentic AI Automation Engineer with 8+ years of experience in Playwright, TypeScript, API Automation and CI/CD."
-  />
-
-  <meta
-    name="keywords"
-    content="Senior SDET, Automation Architect, Playwright, TypeScript, Agentic AI, Claude, Jira MCP, API Automation, Selenium, CI/CD"
-  />
-
+  <meta name="description" content="Himen Patel - Senior SDET, Automation Architect and Agentic AI Automation Engineer with 8+ years of experience." />
+  <meta name="keywords" content="Senior SDET, Automation Architect, Playwright, TypeScript, Agentic AI, Claude, Jira MCP, API Automation, Selenium, CI/CD" />
   <title>Himen Patel | Senior SDET | Automation Architect | Agentic AI</title>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <style>
     :root {
-      --bg: #f6f8fc;
-      --bg-secondary: #ffffff;
-      --text: #172033;
-      --muted: #667085;
-      --primary: #635bff;
-      --primary-dark: #4f46e5;
-      --secondary: #00b8d9;
-      --border: #e5e7eb;
-      --card: rgba(255, 255, 255, 0.86);
-      --shadow: 0 15px 45px rgba(31, 41, 55, 0.08);
-      --gradient: linear-gradient(135deg, #635bff, #00b8d9);
+      --bg:#f6f8fc; --surface:#fff; --text:#172033; --muted:#667085;
+      --primary:#635bff; --secondary:#00b8d9; --border:#e5e7eb;
+      --card:rgba(255,255,255,.88); --shadow:0 15px 45px rgba(31,41,55,.08);
+      --gradient:linear-gradient(135deg,#635bff,#00b8d9);
     }
-
     body.dark {
-      --bg: #080b14;
-      --bg-secondary: #101522;
-      --text: #f4f7fb;
-      --muted: #98a2b3;
-      --primary: #8b7cff;
-      --primary-dark: #7567ff;
-      --secondary: #22d3ee;
-      --border: #20283a;
-      --card: rgba(16, 21, 34, 0.88);
-      --shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
-      --gradient: linear-gradient(135deg, #8b7cff, #22d3ee);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background:
-        radial-gradient(
-          circle at top left,
-          rgba(99, 91, 255, 0.12),
-          transparent 30%
-        ),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1150px, 92%);
-      margin: auto;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================== */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: rgba(246, 248, 252, 0.8);
-      border-bottom: 1px solid var(--border);
-    }
-
-    body.dark nav {
-      background: rgba(8, 11, 20, 0.82);
-    }
-
-    .nav-inner {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--muted);
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .theme-toggle {
-      border: 1px solid var(--border);
-      background: var(--bg-secondary);
-      color: var(--text);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .theme-toggle:hover {
-      transform: rotate(15deg);
-      border-color: var(--primary);
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-      min-height: 680px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      background: rgba(99, 91, 255, 0.15);
-      filter: blur(100px);
-      border-radius: 50%;
-      top: 30px;
-      right: -120px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      border-radius: 30px;
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .availability span {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #22c55e;
-    }
-
-    .hero h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(3rem, 7vw, 5.8rem);
-      line-height: 1;
-      letter-spacing: -4px;
-      margin-bottom: 1rem;
-    }
-
-    .gradient-text {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero h2 {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      color: var(--muted);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-description {
-      max-width: 780px;
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 20px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: var(--gradient);
-      color: white;
-      box-shadow: 0 10px 25px rgba(99, 91, 255, 0.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(99, 91, 255, 0.35);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--border);
-      background: var(--card);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    /* =========================
-       STATS
-    ========================== */
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-
-    .stat {
-      padding: 1.3rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .stat strong {
-      display: block;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.8rem;
-      color: var(--primary);
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    /* =========================
-       SECTIONS
-    ========================== */
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      margin-bottom: 2.5rem;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.75rem;
-      color: var(--primary);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -1px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      max-width: 750px;
-      margin-top: 10px;
-    }
-
-    /* =========================
-       CARDS
-    ========================== */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.3rem;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 1.7rem;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(99, 91, 255, 0.4);
-      box-shadow: 0 20px 50px rgba(99, 91, 255, 0.12);
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: rgba(99, 91, 255, 0.12);
-      color: var(--primary);
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      font-family: "Space Grotesk", sans-serif;
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    /* =========================
-       PROFILE
-    ========================== */
-
-    .profile-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.5rem;
-    }
-
-    .profile-list {
-      list-style: none;
-    }
-
-    .profile-list li {
-      position: relative;
-      padding-left: 25px;
-      margin-bottom: 12px;
-      color: var(--muted);
-    }
-
-    .profile-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    /* =========================
-       AI SECTION
-    ========================== */
-
-    .ai-section {
-      position: relative;
-    }
-
-    .ai-card {
-      background:
-        linear-gradient(
-          135deg,
-          rgba(99, 91, 255, 0.13),
-          rgba(0, 184, 217, 0.08)
-        ),
-        var(--card);
-      border: 1px solid rgba(99, 91, 255, 0.25);
-    }
-
-    .ai-badge {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 20px;
-      background: rgba(99, 91, 255, 0.12);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 800;
-      margin: 4px;
-    }
-
-    /* =========================
-       SKILLS
-    ========================== */
-
-    .skill-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .skill-group h3 {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .badge {
-      padding: 7px 11px;
-      border-radius: 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: 0.25s;
-    }
-
-    .badge:hover {
-      color: var(--primary);
-      border-color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       PROJECTS
-    ========================== */
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 250px;
-    }
-
-    .project-footer {
-      margin-top: auto;
-      padding-top: 1.2rem;
-    }
-
-    .project-link {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 0.88rem;
-    }
-
-    /* =========================
-       ACHIEVEMENTS
-    ========================== */
-
-    .achievement-list {
-      display: grid;
-      gap: 12px;
-      list-style: none;
-    }
-
-    .achievement-list li {
-      padding: 13px 15px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--bg);
-      color: var(--muted);
-    }
-
-    .achievement-list strong {
-      color: var(--text);
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-
-    .contact-card {
-      text-align: center;
-      padding: 3rem 1.5rem;
-    }
-
-    .contact-card h2 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 1.5rem;
-    }
-
-    .social {
-      width: 45px;
-      height: 45px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-
-    .social:hover {
-      color: white;
-      background: var(--primary);
-      border-color: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer {
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    /* =========================
-       SCROLL ANIMATION
-    ========================== */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: 0.7s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
-
-    @media (max-width: 800px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: 620px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .profile-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        justify-content: center;
-      }
-
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      section {
-        padding: 65px 0;
-      }
+      --bg:#080b14; --surface:#101522; --text:#f4f7fb; --muted:#98a2b3;
+      --primary:#8b7cff; --secondary:#22d3ee; --border:#20283a;
+      --card:rgba(16,21,34,.9); --shadow:0 20px 55px rgba(0,0,0,.35);
+      --gradient:linear-gradient(135deg,#8b7cff,#22d3ee);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,sans-serif;background:
+      radial-gradient(circle at top left,rgba(99,91,255,.12),transparent 30%),var(--bg);
+      color:var(--text);line-height:1.7;transition:.3s
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1150px,92%);margin:auto}
+    nav{
+      position:sticky;top:0;z-index:1000;backdrop-filter:blur(16px);
+      background:rgba(246,248,252,.82);border-bottom:1px solid var(--border)
+    }
+    body.dark nav{background:rgba(8,11,20,.86)}
+    .nav-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font:700 1.35rem "Space Grotesk";background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-links{display:flex;gap:1.35rem;align-items:center}
+    .nav-links a{font-size:.88rem;font-weight:600;color:var(--muted);transition:.25s}
+    .nav-links a:hover{color:var(--primary)}
+    .theme-toggle{
+      border:1px solid var(--border);background:var(--surface);color:var(--text);
+      width:40px;height:40px;border-radius:50%;cursor:pointer
+    }
+
+    .hero{min-height:700px;display:flex;align-items:center;position:relative;overflow:hidden}
+    .hero:before{
+      content:"";position:absolute;width:430px;height:430px;right:-130px;top:40px;
+      background:rgba(99,91,255,.15);filter:blur(100px);border-radius:50%
+    }
+    .hero-content{position:relative;z-index:2;max-width:920px}
+    .availability{
+      display:inline-flex;align-items:center;gap:8px;padding:7px 14px;
+      border:1px solid var(--border);background:var(--card);border-radius:30px;
+      color:var(--muted);font-size:.82rem;margin-bottom:1.5rem
+    }
+    .availability span{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 10px #22c55e}
+    .hero h1{font:700 clamp(3.2rem,7vw,5.8rem)/.95 "Space Grotesk";letter-spacing:-4px;margin-bottom:1rem}
+    .gradient-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero h2{font-size:clamp(1.15rem,3vw,1.75rem);color:var(--muted);margin-bottom:1.3rem}
+    .hero-description{max-width:800px;color:var(--muted);font-size:1.03rem;margin-bottom:2rem}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:1rem}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:12px 19px;border-radius:10px;
+      font-weight:700;font-size:.9rem;transition:.3s
+    }
+    .btn-primary{background:var(--gradient);color:#fff;box-shadow:0 10px 25px rgba(99,91,255,.25)}
+    .btn-primary:hover,.btn-secondary:hover{transform:translateY(-3px)}
+    .btn-secondary{border:1px solid var(--border);background:var(--card)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+    .stat{padding:1.2rem;background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow)}
+    .stat strong{display:block;font:700 1.75rem "Space Grotesk";color:var(--primary)}
+    .stat span{color:var(--muted);font-size:.8rem}
+
+    section{padding:85px 0}
+    .section-header{margin-bottom:2.3rem}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.72rem;color:var(--primary);font-weight:800;margin-bottom:8px}
+    .section-title{font:700 clamp(2rem,4vw,3rem) "Space Grotesk";letter-spacing:-1px}
+    .section-description{color:var(--muted);max-width:780px;margin-top:8px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.25rem}
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.6rem;
+      box-shadow:var(--shadow);backdrop-filter:blur(10px);transition:.3s
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(99,91,255,.4)}
+    .card-icon{
+      width:47px;height:47px;display:grid;place-items:center;border-radius:12px;
+      background:rgba(99,91,255,.12);color:var(--primary);margin-bottom:1rem
+    }
+    .card h3{font:700 1.1rem "Space Grotesk";margin-bottom:7px}
+    .card p{color:var(--muted);font-size:.9rem}
+    .profile-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.3rem}
+    .profile-list,.experience-list,.achievement-list{list-style:none}
+    .profile-list li{position:relative;padding-left:24px;margin-bottom:11px;color:var(--muted)}
+    .profile-list li:before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:800}
+    .experience{display:grid;grid-template-columns:180px 1fr;gap:2rem}
+    .experience-item{border-left:2px solid var(--primary);padding-left:1.3rem;margin-bottom:2rem}
+    .experience-date{color:var(--primary);font-weight:800;font-size:.82rem}
+    .experience-company{font:700 1.15rem "Space Grotesk"}
+    .experience-role{color:var(--muted);font-weight:600;margin-bottom:10px}
+    .experience-list li{position:relative;padding-left:20px;color:var(--muted);margin-bottom:8px;font-size:.9rem}
+    .experience-list li:before{content:"•";position:absolute;left:0;color:var(--primary);font-size:1.3rem}
+    .ai-card{background:linear-gradient(135deg,rgba(99,91,255,.12),rgba(0,184,217,.08)),var(--card)}
+    .badges{display:flex;flex-wrap:wrap;gap:8px}
+    .badge{padding:7px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--border);color:var(--muted);font-size:.78rem;font-weight:600;transition:.2s}
+    .badge:hover{color:var(--primary);border-color:var(--primary);transform:translateY(-2px)}
+    .skill-group{margin-bottom:1.4rem}.skill-group:last-child{margin-bottom:0}
+    .skill-group h3{font-size:.92rem;margin-bottom:9px}
+    .achievement-list{display:grid;gap:10px}
+    .achievement-list li{padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:.9rem}
+    .achievement-list strong{color:var(--text)}
+    .project-card{display:flex;flex-direction:column;min-height:230px}
+    .project-footer{margin-top:auto;padding-top:1rem}
+    .project-link{color:var(--primary);font-weight:700;font-size:.87rem}
+    .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    .contact-card{text-align:center;padding:3rem 1.5rem}
+    .contact-card h2{font:700 2.3rem "Space Grotesk";margin-bottom:8px}
+    .contact-card p{color:var(--muted);margin-bottom:1.4rem}
+    .socials{display:flex;justify-content:center;gap:12px;margin-top:1.4rem}
+    .social{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);border-radius:50%;transition:.3s}
+    .social:hover{color:#fff;background:var(--primary);border-color:var(--primary);transform:translateY(-3px)}
+    footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s ease}
+    .reveal.active{opacity:1;transform:translateY(0)}
+
+    @media(max-width:800px){
+      .nav-links{display:none}.stats{grid-template-columns:repeat(2,1fr)}
+      .profile-grid,.education-grid{grid-template-columns:1fr}
+      .experience{grid-template-columns:1fr;gap:.5rem}
+      .hero{min-height:620px}.hero h1{letter-spacing:-2px}
+    }
+    @media(max-width:500px){
+      .stats{grid-template-columns:1fr 1fr}.hero-buttons{flex-direction:column}
+      .btn{justify-content:center}section{padding:65px 0}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
-
-  <nav>
-    <div class="container nav-inner">
-
-      <a href="#" class="logo">HIMEN.PATEL</a>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#ai">Agentic AI</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fa-solid fa-moon"></i>
-      </button>
-
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="logo">HIMEN.PATEL</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#ai">Agentic AI</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
-
-
-  <!-- =========================
-       HERO
-  ========================== -->
-
-  <header class="hero">
-
-    <div class="container">
-
-      <div class="hero-content">
-
-        <div class="availability">
-          <span></span>
-          Senior SDET • Automation Architect • AI Automation
-        </div>
-
-        <h1>
-          Himen<br />
-          <span class="gradient-text">Patel</span>
-        </h1>
-
-        <h2>
-          Senior SDET | Automation Architect | Agentic AI
-        </h2>
-
-        <p class="hero-description">
-          Senior SDET with <strong>8+ years of experience</strong> building
-          scalable Web, API, and Mobile automation solutions.
-          Specialized in <strong>Playwright, TypeScript, API Automation,
-          CI/CD, and Agentic AI automation</strong> using Claude and Jira MCP.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a
-            href="mailto:himenpatel2011@gmail.com"
-            class="btn btn-primary"
-          >
-            <i class="fa-solid fa-envelope"></i>
-            Contact Me
-          </a>
-
-          <a
-            href="https://github.com/Himen78"
-            target="_blank"
-            class="btn btn-secondary"
-          >
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
-
-          <a
-            href="https://linkedin.com/in/himen-patel"
-            target="_blank"
-            class="btn btn-secondary"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-            LinkedIn
-          </a>
-
-        </div>
-
-        <div class="stats">
-
-          <div class="stat">
-            <strong>8+</strong>
-            <span>Years Experience</span>
-          </div>
-
-          <div class="stat">
-            <strong>200+</strong>
-            <span>Automation Scenarios</span>
-          </div>
-
-          <div class="stat">
-            <strong>3</strong>
-            <span>Major Browser Platforms</span>
-          </div>
-
-          <div class="stat">
-            <strong>AI</strong>
-            <span>Agentic Automation</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- =========================
-       ABOUT
-  ========================== -->
-
-  <section id="about" class="reveal">
-
-    <div class="container">
-
-      <div class="section-header">
-
-        <div class="eyebrow">Profile</div>
-
-        <h2 class="section-title">
-          Engineering Quality at Scale
-        </h2>
-
-        <p class="section-description">
-          I specialize in designing automation solutions that improve
-          software quality, accelerate release cycles, and reduce
-          repetitive testing effort.
-        </p>
-
-      </div>
-
-      <div class="profile-grid">
-
-        <div class="card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-user-tie"></i>
-          </div>
-
-          <h3>Senior SDET & Automation Architect</h3>
-
-          <ul class="profile-list">
-
-            <li>
-              8+ years of experience in Web, API, and Mobile Automation.
-            </li>
-
-            <li>
-              Strong experience building automation frameworks from scratch.
-            </li>
-
-            <li>
-              Expertise in Playwright, TypeScript, Java, Python,
-              Selenium, Cypress, and Appium.
-            </li>
-
-            <li>
-              Designed and maintained 200+ automated E2E scenarios.
-            </li>
-
-            <li>
-              Experience across Healthcare, Aviation, Telecom,
-              and Job Portal domains.
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-
-          <h3>US Healthcare</h3>
-
-          <p>
-            Worked on US Healthcare applications following
-            <strong>HIPAA compliance, data privacy, security,
-            and regulatory requirements</strong>.
-          </p>
-
-          <br />
-
-          <p>
-            Experienced in automating critical healthcare workflows
-            while maintaining reliable and secure test automation practices.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       AGENTIC AI
-  ========================== -->
-
-  <section id="ai" class="ai-section reveal">
-
-    <div class="container">
-
-      <div class="section-header">
-
-        <div class="eyebrow">AI Engineering</div>
-
-        <h2 class="section-title">
-          Agentic AI for Test Automation
-        </h2>
-
-        <p class="section-description">
-          Implementing AI agents to move beyond traditional automation
-          and automate parts of the complete software quality lifecycle.
-        </p>
-
-      </div>
-
-      <div class="grid">
-
-        <div class="card ai-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-robot"></i>
-          </div>
-
-          <h3>Jira MCP Automation Agent</h3>
-
-          <p>
-            Implemented Agentic AI using <strong>Claude and Jira MCP</strong>
-            to retrieve Jira/Zephyr test scenarios and streamline
-            automation workflows.
-          </p>
-
-        </div>
-
-
-        <div class="card ai-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-code"></i>
-          </div>
-
-          <h3>Test Generation Agent</h3>
-
-          <p>
-            Developed AI agents to analyze test scenarios and
-            generate/implement corresponding Playwright automation
-            scenarios.
-          </p>
-
-        </div>
-
-
-        <div class="card ai-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-
-          <h3>AI Code Review Agent</h3>
-
-          <p>
-            Implemented AI-assisted code review to validate automation
-            code against framework and coding standards.
-          </p>
-
-        </div>
-
-
-        <div class="card ai-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-chart-line"></i>
-          </div>
-
-          <h3>Automation Report Agent</h3>
-
-          <p>
-            Developed AI-driven report analysis to summarize execution
-            results, identify failure patterns, and highlight potential
-            issues.
-          </p>
-
-        </div>
-
-
-        <div class="card ai-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-code-branch"></i>
-          </div>
-
-          <h3>Git Summary Agent</h3>
-
-          <p>
-            Implemented an AI agent to analyze Git changes and generate
-            concise development and automation summaries.
-          </p>
-
-        </div>
-
-
-        <div class="card ai-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </div>
-
-          <h3>AI-Assisted Automation</h3>
-
-          <p>
-            Applying Generative AI and Prompt Engineering to improve
-            test development, analysis, maintenance, and productivity.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SKILLS
-  ========================== -->
-
-  <section id="skills" class="reveal">
-
-    <div class="container">
-
-      <div class="section-header">
-
-        <div class="eyebrow">Technology</div>
-
-        <h2 class="section-title">
-          Skills & Expertise
-        </h2>
-
-      </div>
-
-      <div class="card">
-
-        <div class="skill-group">
-
-          <h3>🤖 AI & Agentic Automation</h3>
-
-          <div class="badges">
-            <span class="badge">Agentic AI</span>
-            <span class="badge">Claude</span>
-            <span class="badge">Claude Code</span>
-            <span class="badge">Jira MCP</span>
-            <span class="badge">Generative AI</span>
-            <span class="badge">Prompt Engineering</span>
-            <span class="badge">AI Test Generation</span>
-            <span class="badge">AI Code Review</span>
-            <span class="badge">AI Report Analysis</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-group">
-
-          <h3>🎭 Automation</h3>
-
-          <div class="badges">
-            <span class="badge">Playwright</span>
-            <span class="badge">TypeScript</span>
-            <span class="badge">JavaScript</span>
-            <span class="badge">Selenium</span>
-            <span class="badge">Cypress</span>
-            <span class="badge">Appium</span>
-            <span class="badge">POM</span>
-            <span class="badge">E2E Automation</span>
-            <span class="badge">Cross-Browser Testing</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-group">
-
-          <h3>🔌 API & Backend</h3>
-
-          <div class="badges">
-            <span class="badge">Playwright APIContext</span>
-            <span class="badge">REST Assured</span>
-            <span class="badge">Postman</span>
-            <span class="badge">API Automation</span>
-            <span class="badge">CRUD Validation</span>
-            <span class="badge">UI–API Integration</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-group">
-
-          <h3>⚙️ Programming</h3>
-
-          <div class="badges">
-            <span class="badge">Java</span>
-            <span class="badge">Python</span>
-            <span class="badge">TypeScript</span>
-            <span class="badge">JavaScript</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-group">
-
-          <h3>🚀 CI/CD & DevOps</h3>
-
-          <div class="badges">
-            <span class="badge">GitHub Actions</span>
-            <span class="badge">Jenkins</span>
-            <span class="badge">GitLab</span>
-            <span class="badge">Azure DevOps</span>
-            <span class="badge">Docker</span>
-            <span class="badge">GitHub</span>
-            <span class="badge">Git</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-group">
-
-          <h3>📊 Performance & Methodologies</h3>
-
-          <div class="badges">
-            <span class="badge">Apache JMeter</span>
-            <span class="badge">Agile</span>
-            <span class="badge">Scrum</span>
-            <span class="badge">Test Strategy</span>
-            <span class="badge">Regression Testing</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PROJECTS
-  ========================== -->
-
-  <section id="projects" class="reveal">
-
-    <div class="container">
-
-      <div class="section-header">
-
-        <div class="eyebrow">Selected Work</div>
-
-        <h2 class="section-title">
-          Projects & Frameworks
-        </h2>
-
-      </div>
-
-      <div class="grid">
-
-        <div class="card project-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-
-          <h3>Playwright Automation Framework</h3>
-
-          <p>
-            Scalable Playwright + TypeScript automation framework using
-            POM, reusable fixtures, utilities, hooks, and modular
-            architecture.
-          </p>
-
-          <div class="project-footer">
-
-            <a
-              class="project-link"
-              href="https://github.com/Himen78/Febric_Automation_Playwright"
-              target="_blank"
-            >
-              View on GitHub →
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="card project-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-gears"></i>
-          </div>
-
-          <h3>CI/CD Automation</h3>
-
-          <p>
-            GitHub Actions-based automation pipeline for continuous
-            test execution, reporting, and quality validation.
-          </p>
-
-          <div class="project-footer">
-
-            <a
-              class="project-link"
-              href="https://github.com/Himen78/CI-CD-Automation-Project"
-              target="_blank"
-            >
-              View on GitHub →
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="card project-card">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-robot"></i>
-          </div>
-
-          <h3>Agentic AI Automation</h3>
-
-          <p>
-            AI-powered automation workflow using Claude and Jira MCP
-            for test scenario analysis, automation generation,
-            code review, Git summaries, and report analysis.
-          </p>
-
-          <div class="project-footer">
-            <span class="project-link">
-              AI • Automation • MCP
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ACHIEVEMENTS
-  ========================== -->
-
-  <section id="achievements" class="reveal">
-
-    <div class="container">
-
-      <div class="section-header">
-
-        <div class="eyebrow">Impact</div>
-
-        <h2 class="section-title">
-          Experience & Achievements
-        </h2>
-
-      </div>
-
-      <div class="card">
-
-        <ul class="achievement-list">
-
-          <li>
-            <strong>8+ Years:</strong>
-            Professional experience in Software Test Automation and SDET practices.
-          </li>
-
-          <li>
-            <strong>200+ Scenarios:</strong>
-            Automated critical E2E business workflows across multiple domains.
-          </li>
-
-          <li>
-            <strong>Agentic AI:</strong>
-            Implemented AI agents for test generation, code review,
-            Git summaries, and automation report analysis.
-          </li>
-
-          <li>
-            <strong>Jira MCP:</strong>
-            Integrated Jira/Zephyr test scenarios into AI-assisted
-            automation workflows.
-          </li>
-
-          <li>
-            <strong>Healthcare:</strong>
-            Worked on US Healthcare applications following HIPAA,
-            data privacy, security, and regulatory requirements.
-          </li>
-
-          <li>
-            <strong>Cross-Browser:</strong>
-            Automated Chromium, WebKit, and Firefox with parallel
-            and headless execution.
-          </li>
-
-          <li>
-            <strong>API Automation:</strong>
-            Built robust API automation using Playwright APIContext
-            with authentication, CRUD, payments, and validations.
-          </li>
-
-          <li>
-            <strong>CI/CD:</strong>
-            Integrated automation into GitHub Actions, Jenkins,
-            and Azure DevOps pipelines.
-          </li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================== -->
-
-  <section id="contact" class="reveal">
-
-    <div class="container">
-
-      <div class="card contact-card">
-
-        <div class="eyebrow">Let's Connect</div>
-
-        <h2>
-          Building the Future of
-          <span class="gradient-text">Intelligent Automation</span>
-        </h2>
-
-        <p>
-          Open to Senior SDET, SDET Lead, Automation Architect,
-          and AI-powered Test Automation opportunities.
-        </p>
-
-        <a
-          href="mailto:himenpatel2011@gmail.com"
-          class="btn btn-primary"
-        >
-          <i class="fa-solid fa-paper-plane"></i>
-          Get in Touch
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="availability"><span></span> Senior SDET • Automation Architect • Agentic AI</div>
+
+      <h1>Himen<br><span class="gradient-text">Patel</span></h1>
+
+      <h2>Senior SDET | Automation Architect | Agentic AI</h2>
+
+      <p class="hero-description">
+        Senior SDET / Software Automation Engineer with <strong>8+ years of experience</strong>
+        in Web, API, and Mobile Automation across <strong>Healthcare, Aviation, Telecom,
+        and Job Portal</strong> domains. Specialized in <strong>Playwright, TypeScript,
+        API Automation, CI/CD, Claude, and Agentic AI</strong>.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="mailto:himenpatel2011@gmail.com" class="btn btn-primary">
+          <i class="fa-solid fa-envelope"></i> Contact Me
         </a>
+        <a href="https://github.com/Himen78" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/himen-patel" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
 
-        <div class="socials">
+      <div class="stats">
+        <div class="stat"><strong>8+</strong><span>Years Experience</span></div>
+        <div class="stat"><strong>1,000+</strong><span>Test Cases Automated</span></div>
+        <div class="stat"><strong>3</strong><span>Browser Platforms</span></div>
+        <div class="stat"><strong>AI</strong><span>Agentic Automation</span></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-          <a
-            class="social"
-            href="https://github.com/Himen78"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
+<section id="about" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Profile</div>
+      <h2 class="section-title">Senior SDET & Automation Architect</h2>
+      <p class="section-description">
+        Building scalable automation frameworks and intelligent AI-assisted
+        automation solutions across enterprise applications.
+      </p>
+    </div>
 
-          <a
-            class="social"
-            href="https://linkedin.com/in/himen-patel"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
+    <div class="profile-grid">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <h3>Core Profile</h3>
+        <ul class="profile-list">
+          <li>8+ years of Web, API, and Mobile Automation experience.</li>
+          <li>Expertise in Playwright, TypeScript, Java, Python, Selenium, Cypress, and Appium.</li>
+          <li>Built scalable automation frameworks from scratch with reusable architecture.</li>
+          <li>Converted and automated 1,000+ test cases across critical business workflows.</li>
+          <li>Experience across Healthcare, Aviation, Telecom, and Job Portal domains.</li>
+        </ul>
+      </div>
 
-          <a
-            class="social"
-            href="mailto:himenpatel2011@gmail.com"
-            aria-label="Email"
-          >
-            <i class="fa-solid fa-envelope"></i>
-          </a>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>US Healthcare</h3>
+        <p>
+          Worked on US Healthcare applications following <strong>HIPAA compliance,
+          data privacy, security, and regulatory requirements</strong>.
+        </p>
+        <br>
+        <p>
+          Experience working with enterprise healthcare workflows and
+          automation solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="ai" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">AI Engineering</div>
+      <h2 class="section-title">Agentic AI Automation</h2>
+      <p class="section-description">
+        Implementing AI agents to streamline test automation, development,
+        code quality, reporting, and engineering workflows.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card ai-card">
+        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>Claude + Jira MCP</h3>
+        <p>Implemented Agentic AI using Claude and Jira MCP to retrieve test scenarios and streamline automation workflows.</p>
+      </div>
+
+      <div class="card ai-card">
+        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Test Case Generation</h3>
+        <p>Developed AI agents for test case generation and implementation of corresponding Playwright automation scenarios.</p>
+      </div>
+
+      <div class="card ai-card">
+        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>AI Code Review</h3>
+        <p>Implemented AI agents for code review and coding-standard validation to improve automation code quality.</p>
+      </div>
+
+      <div class="card ai-card">
+        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Report Analysis</h3>
+        <p>Implemented AI-assisted automation report analysis to summarize execution results and identify failure patterns.</p>
+      </div>
+
+      <div class="card ai-card">
+        <div class="card-icon"><i class="fa-solid fa-code-branch"></i></div>
+        <h3>Git Summary Agent</h3>
+        <p>Developed AI-assisted Git summary generation for concise development and automation change summaries.</p>
+      </div>
+
+      <div class="card ai-card">
+        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>AI-Assisted Automation</h3>
+        <p>Applying Generative AI, Prompt Engineering, Claude, MCP, and AI-assisted automation to improve engineering productivity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Career</div>
+      <h2 class="section-title">Professional Experience</h2>
+    </div>
+
+    <div class="card">
+
+      <div class="experience-item">
+        <div class="experience">
+          <div>
+            <div class="experience-date">08/2025 – Present</div>
+            <div>Ahmedabad, India</div>
+          </div>
+          <div>
+            <div class="experience-company">Codal India</div>
+            <div class="experience-role">Senior Automation Engineer (Senior SDET)</div>
+            <ul class="experience-list">
+              <li>Built a scalable Playwright + TypeScript automation framework using POM and modular architecture.</li>
+              <li>Implemented Agentic AI automation using Claude and Jira MCP to retrieve test scenarios and streamline automation.</li>
+              <li>Worked on US Healthcare applications following HIPAA compliance, data privacy, security, and regulatory requirements.</li>
+              <li>Developed AI agents for test case generation, code review, coding standards, Git summaries, and automation report analysis.</li>
+              <li>Converted and automated 1,000+ test cases covering Signup, Login, Checkout, Payments, Orders, Billing, and User Onboarding.</li>
+              <li>Implemented cross-browser and parallel execution across Chromium, WebKit, and Firefox.</li>
+              <li>Developed robust API automation using Playwright APIContext covering end-to-end API validation, authentication, CRUD operations, and UI–API integration.</li>
+              <li>Built reusable fixtures, utilities, hooks, and framework components for maintainable automation.</li>
+              <li>Integrated automation with GitHub Actions, Jenkins, and Azure DevOps for CI/CD execution and reporting.</li>
+              <li>Optimized test execution and failure analysis using Playwright Trace Viewer, logs, and API validation.</li>
+            </ul>
+          </div>
         </div>
+      </div>
 
+      <div class="experience-item">
+        <div class="experience">
+          <div>
+            <div class="experience-date">09/2021 – 08/2025</div>
+            <div>Ahmedabad, India</div>
+          </div>
+          <div>
+            <div class="experience-company">T-Mobile, USA</div>
+            <div class="experience-role">Sr. Software Automation Engineer — Softweb Solutions Inc (An Avnet Company)</div>
+            <ul class="experience-list">
+              <li>Collaborated with business stakeholders and analysts to clarify requirements through detailed walkthroughs.</li>
+              <li>Designed and developed Cypress, Selenium, and Playwright automation frameworks from scratch, including automated reporting.</li>
+              <li>Implemented API automation using REST Assured with Java for reliable RESTful service validation.</li>
+              <li>Utilized GitHub/GitLab for version control and integrated automation into Jenkins and GitLab CI/CD pipelines.</li>
+              <li>Developed mobile automation scripts using Appium, Java, TestNG, and Maven for Android applications.</li>
+              <li>Created reusable utilities for screenshots, emails, Excel handling, database connections, and log generation.</li>
+              <li>Used TestNG Listeners, ReportNG, and ExtentReports for automation reporting.</li>
+              <li>Participated in Agile Scrum ceremonies including stand-ups, sprint planning, reviews, and retrospectives.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience">
+          <div>
+            <div class="experience-date">01/2020 – 08/2021</div>
+            <div>Ahmedabad, India</div>
+          </div>
+          <div>
+            <div class="experience-company">Agile Infoways Pvt Ltd</div>
+            <div class="experience-role">Software Automation Engineer</div>
+            <ul class="experience-list">
+              <li>Developed automation frameworks using Selenium WebDriver, TestNG, JUnit, and Maven.</li>
+              <li>Designed hybrid Java + Selenium + TestNG frameworks using Page Object Model.</li>
+              <li>Integrated automated test suites into Jenkins CI/CD pipelines.</li>
+              <li>Built Android automation scripts using Appium, Java, TestNG, and Maven.</li>
+              <li>Created reusable utilities for screenshots, emails, Excel handling, database connections, and logging.</li>
+              <li>Utilized TestNG Listeners, ReportNG, and ExtentReports for detailed reporting.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience">
+          <div>
+            <div class="experience-date">09/2018 – 01/2020</div>
+            <div>Vadodara, India</div>
+          </div>
+          <div>
+            <div class="experience-company">FLYdocs India Pvt Ltd</div>
+            <div class="experience-role">Software Engineer in Test</div>
+            <ul class="experience-list">
+              <li>Worked on UI and Mobile Automation using Appium and Java.</li>
+              <li>Developed and executed Selenium and Appium automation scripts aligned with sprint plans.</li>
+              <li>Implemented POM framework using Java and Selenium for scalable automation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience">
+          <div>
+            <div class="experience-date">11/2017 – 08/2018</div>
+            <div>Vadodara, India</div>
+          </div>
+          <div>
+            <div class="experience-company">PriyaSharma Software</div>
+            <div class="experience-role">Software Test Engineer</div>
+            <ul class="experience-list">
+              <li>Used JIRA for defect reporting and resolution.</li>
+              <li>Analyzed project requirements and collaborated with teams on testing strategies.</li>
+              <li>Performed cross-platform and cross-browser testing across Windows, Mac, Chrome, Firefox, and Safari.</li>
+              <li>Worked with Selenium WebDriver, TestNG, JUnit, and Maven to build automation frameworks and reports.</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
+  </div>
+</section>
 
-  </section>
+<section id="skills" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Technology</div>
+      <h2 class="section-title">Technical Skills</h2>
+    </div>
 
+    <div class="card">
+      <div class="skill-group">
+        <h3>🤖 AI & Agentic Automation</h3>
+        <div class="badges">
+          <span class="badge">Agentic AI</span><span class="badge">Claude</span>
+          <span class="badge">Claude Academy</span><span class="badge">MCP</span>
+          <span class="badge">Generative AI</span><span class="badge">AI-Assisted Test Automation</span>
+          <span class="badge">Prompt Engineering</span><span class="badge">Copilot</span>
+        </div>
+      </div>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+      <div class="skill-group">
+        <h3>🎭 Automation</h3>
+        <div class="badges">
+          <span class="badge">Playwright</span><span class="badge">TypeScript</span>
+          <span class="badge">Selenium</span><span class="badge">Cypress</span>
+          <span class="badge">Appium</span>
+        </div>
+      </div>
 
-  <footer>
+      <div class="skill-group">
+        <h3>🔌 API & Backend</h3>
+        <div class="badges">
+          <span class="badge">REST Assured</span><span class="badge">Postman</span>
+          <span class="badge">Playwright APIContext</span><span class="badge">API Automation</span>
+        </div>
+      </div>
 
-    <p>
-      © 2026 Himen Patel
-      • Senior SDET • Automation Architect • Agentic AI
-    </p>
+      <div class="skill-group">
+        <h3>☕ Programming</h3>
+        <div class="badges">
+          <span class="badge">Java</span><span class="badge">Python</span>
+          <span class="badge">JavaScript</span><span class="badge">TypeScript</span>
+          <span class="badge">TestNG</span><span class="badge">JUnit</span><span class="badge">Maven</span>
+        </div>
+      </div>
 
-  </footer>
+      <div class="skill-group">
+        <h3>🚀 CI/CD & DevOps</h3>
+        <div class="badges">
+          <span class="badge">Jenkins</span><span class="badge">GitLab</span>
+          <span class="badge">GitHub</span><span class="badge">GitHub Actions</span>
+          <span class="badge">Docker</span><span class="badge">Azure DevOps</span>
+        </div>
+      </div>
 
+      <div class="skill-group">
+        <h3>📊 Performance & Methodologies</h3>
+        <div class="badges">
+          <span class="badge">Apache JMeter</span><span class="badge">Agile Methodologies</span>
+          <span class="badge">Scrum</span><span class="badge">POM</span>
+          <span class="badge">Cross-Browser Automation</span><span class="badge">CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
+<section id="projects" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Selected Work</div>
+      <h2 class="section-title">Projects & Automation</h2>
+    </div>
 
-  <script>
+    <div class="grid">
+      <div class="card project-card">
+        <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Playwright Automation Framework</h3>
+        <p>Scalable Playwright + TypeScript framework using POM and modular architecture.</p>
+        <div class="project-footer">
+          <a class="project-link" href="https://github.com/Himen78/Febric_Automation_Playwright" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
 
-    /* Theme */
+      <div class="card project-card">
+        <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+        <h3>CI/CD Automation Project</h3>
+        <p>GitHub Actions integration for automated test execution and reporting.</p>
+        <div class="project-footer">
+          <a class="project-link" href="https://github.com/Himen78/CI-CD-Automation-Project" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
 
-    const themeToggle = document.getElementById("themeToggle");
+      <div class="card project-card">
+        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>Agentic AI Automation</h3>
+        <p>Claude and Jira MCP based AI workflow for scenario retrieval, test generation, code review, Git summaries, and report analysis.</p>
+        <div class="project-footer"><span class="project-link">Claude • MCP • Agentic AI</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-      themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    }
+<section id="achievements" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Impact</div>
+      <h2 class="section-title">Key Highlights</h2>
+    </div>
 
-    themeToggle.addEventListener("click", () => {
+    <div class="card impact-card">
+      <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+      <h3>Regression Acceleration</h3>
+      <p>Reduced regression execution from approximately <strong>4 days manually to 4 hours with automation</strong>, achieving the same validation coverage in a fraction of the time.</p>
+    </div>
 
-      document.body.classList.toggle("dark");
+    <div class="card">
+      <ul class="achievement-list">
+        <li><strong>8+ years:</strong> Professional experience in Software Test Automation and SDET practices.</li>
+        <li><strong>1,000+ test cases:</strong> Converted and automated critical Signup, Login, Checkout, Payments, Orders, Billing, and User Onboarding workflows.</li>
+        <li><strong>Agentic AI:</strong> Implemented AI agents for test generation, code review, coding standards, Git summaries, and automation report analysis.</li>
+        <li><strong>Jira MCP:</strong> Integrated Jira test scenarios into AI-assisted automation workflows.</li>
+        <li><strong>US Healthcare:</strong> Worked with HIPAA compliance, data privacy, security, and regulatory requirements.</li>
+        <li><strong>Cross-browser:</strong> Implemented Chromium, WebKit, and Firefox automation with parallel execution.</li>
+        <li><strong>API Automation:</strong> Built robust REST/API automation using Playwright APIContext and REST Assured.</li>
+        <li><strong>CI/CD:</strong> Integrated automation with Jenkins, GitLab, GitHub Actions, and Azure DevOps.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      const isDark = document.body.classList.contains("dark");
+<section class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Education</div>
+      <h2 class="section-title">Education & Certification</h2>
+    </div>
 
-      localStorage.setItem(
-        "theme",
-        isDark ? "dark" : "light"
-      );
+    <div class="education-grid">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>Bachelor's of Engineering</h3>
+        <p>Computer Science and Engineering</p>
+        <p>Gujarat Technological University • 2014 – 2017</p>
+      </div>
 
-      themeToggle.innerHTML = isDark
-        ? '<i class="fa-solid fa-sun"></i>'
-        : '<i class="fa-solid fa-moon"></i>';
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-certificate"></i></div>
+        <h3>Claude Academy</h3>
+        <p>Claude 101</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    });
+<section id="contact" class="reveal">
+  <div class="container">
+    <div class="card contact-card">
+      <div class="eyebrow">Let's Connect</div>
+      <h2>Building the Future of <span class="gradient-text">Intelligent Automation</span></h2>
+      <p>Open to Senior SDET, SDET Lead, Automation Architect, and AI-powered Test Automation opportunities.</p>
 
+      <a href="mailto:himenpatel2011@gmail.com" class="btn btn-primary">
+        <i class="fa-solid fa-paper-plane"></i> Get in Touch
+      </a>
 
-    /* Scroll Reveal */
+      <div class="socials">
+        <a class="social" href="https://github.com/Himen78" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="social" href="https://linkedin.com/in/himen-patel" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="social" href="mailto:himenpatel2011@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
 
-    const revealElements =
-      document.querySelectorAll(".reveal");
+      <p style="margin-top:20px">Ahmedabad, Gujarat • +91 8758024581</p>
+    </div>
+  </div>
+</section>
 
-    const observer =
-      new IntersectionObserver(
-        (entries) => {
+<footer>
+  © 2026 Himen Patel • Senior SDET • Automation Architect • Agentic AI
+</footer>
 
-          entries.forEach((entry) => {
+<script>
+  const themeToggle = document.getElementById("themeToggle");
 
-            if (entry.isIntersecting) {
-              entry.target.classList.add("active");
-            }
+  function updateThemeIcon() {
+    const dark = document.body.classList.contains("dark");
+    themeToggle.innerHTML = dark
+      ? '<i class="fa-solid fa-sun"></i>'
+      : '<i class="fa-solid fa-moon"></i>';
+  }
 
-          });
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+  updateThemeIcon();
 
-        },
-        {
-          threshold: 0.12
-        }
-      );
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("dark") ? "dark" : "light"
+    );
+    updateThemeIcon();
+  });
 
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("active");
+      });
+    },
+    { threshold: 0.12 }
+  );
 
-  </script>
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
