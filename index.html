@@ -1,355 +1,1439 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Himen Patel | SDET Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Himen Patel - Senior SDET, Automation Architect and Agentic AI Automation Engineer with 8+ years of experience in Playwright, TypeScript, API Automation and CI/CD."
+  />
+
+  <meta
+    name="keywords"
+    content="Senior SDET, Automation Architect, Playwright, TypeScript, Agentic AI, Claude, Jira MCP, API Automation, Selenium, CI/CD"
+  />
+
+  <title>Himen Patel | Senior SDET | Automation Architect | Agentic AI</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
   <style>
     :root {
-      --bg: #f4f4f4;
-      --text: #2c3e50;
-      --primary: #2980b9;
-      --card-bg: #ffffff;
-      --shadow: rgba(0, 0, 0, 0.1);
+      --bg: #f6f8fc;
+      --bg-secondary: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --primary: #635bff;
+      --primary-dark: #4f46e5;
+      --secondary: #00b8d9;
+      --border: #e5e7eb;
+      --card: rgba(255, 255, 255, 0.86);
+      --shadow: 0 15px 45px rgba(31, 41, 55, 0.08);
+      --gradient: linear-gradient(135deg, #635bff, #00b8d9);
     }
 
     body.dark {
-      --bg: #121212;
-      --text: #e0e0e0;
-      --primary: #4dabf7;
-      --card-bg: #1e1e1e;
-      --shadow: rgba(255, 255, 255, 0.05);
+      --bg: #080b14;
+      --bg-secondary: #101522;
+      --text: #f4f7fb;
+      --muted: #98a2b3;
+      --primary: #8b7cff;
+      --primary-dark: #7567ff;
+      --secondary: #22d3ee;
+      --border: #20283a;
+      --card: rgba(16, 21, 34, 0.88);
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+      --gradient: linear-gradient(135deg, #8b7cff, #22d3ee);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: var(--bg);
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(99, 91, 255, 0.12),
+          transparent 30%
+        ),
+        var(--bg);
       color: var(--text);
-      transition: background-color 0.3s, color 0.3s;
+      line-height: 1.7;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .toggle {
-      position: fixed;
-      top: 20px;
-      right: 30px;
-      background: var(--primary);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-      z-index: 10;
-      transition: background 0.3s;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    header {
-      padding: 3rem 1rem;
-      text-align: center;
-      background: linear-gradient(135deg, var(--primary), #6dd5ed);
-      color: #fff;
-      animation: fadeInDown 1s ease-in-out;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid white;
-      width: fit-content;
+    .container {
+      width: min(1150px, 92%);
       margin: auto;
     }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(246, 248, 252, 0.8);
+      border-bottom: 1px solid var(--border);
     }
 
-    @keyframes blink {
-      50% { border-color: transparent }
+    body.dark nav {
+      background: rgba(8, 11, 20, 0.82);
     }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(15deg);
+      border-color: var(--primary);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: rgba(99, 91, 255, 0.15);
+      filter: blur(100px);
+      border-radius: 50%;
+      top: 30px;
+      right: -120px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 30px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .availability span {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 1rem;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      max-width: 780px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 10px 25px rgba(99, 91, 255, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(99, 91, 255, 0.35);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .stat {
+      padding: 1.3rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
 
     section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-      animation: fadeIn 1.2s ease;
+      padding: 90px 0;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .section-header {
+      margin-bottom: 2.5rem;
     }
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid var(--primary);
-      padding-left: 12px;
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 8px;
     }
+
+    .section-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -1px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 750px;
+      margin-top: 10px;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 1.3rem;
     }
 
     .card {
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 6px 16px var(--shadow);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.7rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px var(--shadow);
+      transform: translateY(-6px);
+      border-color: rgba(99, 91, 255, 0.4);
+      box-shadow: 0 20px 50px rgba(99, 91, 255, 0.12);
     }
 
-    .card::after {
-      content: "";
-      position: absolute;
-      bottom: -50px;
-      right: -50px;
-      width: 100px;
-      height: 100px;
-      background: var(--primary);
-      border-radius: 50%;
-      opacity: 0.1;
-      transform: scale(1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover::after {
-      transform: scale(1.3);
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(99, 91, 255, 0.12);
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .card h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+      font-family: "Space Grotesk", sans-serif;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
     }
 
-    .card a {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: bold;
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    .badge {
-      display: inline-block;
-      background-color: var(--primary);
-      color: #fff;
-      padding: 0.3rem 0.6rem;
-      border-radius: 0.5rem;
-      margin: 0.2rem;
-      font-size: 0.85rem;
-      transition: transform 0.2s;
+    /* =========================
+       PROFILE
+    ========================== */
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
     }
 
-    .badge:hover {
-      transform: scale(1.1);
-    }
-
-    .timeline, section ul {
+    .profile-list {
       list-style: none;
-      padding-left: 0;
-      line-height: 1.8;
     }
 
-    section ul li {
-      margin-bottom: 0.5rem;
-      padding-left: 1.2rem;
+    .profile-list li {
       position: relative;
-      font-size: 0.95rem;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      color: var(--muted);
     }
 
-    section ul li::before {
-      content: "✔️";
+    .profile-list li::before {
+      content: "✓";
       position: absolute;
       left: 0;
       color: var(--primary);
+      font-weight: 800;
     }
 
-    blockquote {
-      border-left: 5px solid var(--primary);
-      padding-left: 1rem;
-      font-style: italic;
-      margin: 1.5rem 0;
+    /* =========================
+       AI SECTION
+    ========================== */
+
+    .ai-section {
+      position: relative;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--text);
-      color: var(--bg);
-      margin-top: 3rem;
+    .ai-card {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(99, 91, 255, 0.13),
+          rgba(0, 184, 217, 0.08)
+        ),
+        var(--card);
+      border: 1px solid rgba(99, 91, 255, 0.25);
     }
 
-    .contact {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .contact a {
+    .ai-badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: rgba(99, 91, 255, 0.12);
       color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin: 4px;
     }
 
-    .contact a:hover {
-      text-decoration: underline;
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skill-group {
+      margin-bottom: 1.5rem;
     }
 
-    form {
+    .skill-group h3 {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      padding: 7px 11px;
+      border-radius: 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .badge:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .project-card {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      max-width: 400px;
-      margin: auto;
+      min-height: 250px;
     }
 
-    input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
+    .project-footer {
+      margin-top: auto;
+      padding-top: 1.2rem;
     }
 
-    button {
-      background-color: var(--primary);
+    .project-link {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    /* =========================
+       ACHIEVEMENTS
+    ========================== */
+
+    .achievement-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .achievement-list li {
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--muted);
+    }
+
+    .achievement-list strong {
+      color: var(--text);
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-card {
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .contact-card h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+
+    .social {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .social:hover {
       color: white;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<div class="toggle" onclick="document.body.classList.toggle('dark')">🌗 Toggle Theme</div>
-  <header>
-    <h1>Himen Patel</h1>
-    <p>Senior SDET • Automation Architect • Playwright • Selenium • CI/CD • Generative AI • AI Enthusiast</p>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">HIMEN.PATEL</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#ai">Agentic AI</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="availability">
+          <span></span>
+          Senior SDET • Automation Architect • AI Automation
+        </div>
+
+        <h1>
+          Himen<br />
+          <span class="gradient-text">Patel</span>
+        </h1>
+
+        <h2>
+          Senior SDET | Automation Architect | Agentic AI
+        </h2>
+
+        <p class="hero-description">
+          Senior SDET with <strong>8+ years of experience</strong> building
+          scalable Web, API, and Mobile automation solutions.
+          Specialized in <strong>Playwright, TypeScript, API Automation,
+          CI/CD, and Agentic AI automation</strong> using Claude and Jira MCP.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="mailto:himenpatel2011@gmail.com"
+            class="btn btn-primary"
+          >
+            <i class="fa-solid fa-envelope"></i>
+            Contact Me
+          </a>
+
+          <a
+            href="https://github.com/Himen78"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+
+          <a
+            href="https://linkedin.com/in/himen-patel"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+
+        </div>
+
+        <div class="stats">
+
+          <div class="stat">
+            <strong>8+</strong>
+            <span>Years Experience</span>
+          </div>
+
+          <div class="stat">
+            <strong>200+</strong>
+            <span>Automation Scenarios</span>
+          </div>
+
+          <div class="stat">
+            <strong>3</strong>
+            <span>Major Browser Platforms</span>
+          </div>
+
+          <div class="stat">
+            <strong>AI</strong>
+            <span>Agentic Automation</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </header>
 
-<section>
-  <h2>👨‍💻 Profile Summary</h2>
-  <div class="card">
-    <ul>
-      <li>Senior Software Automation Engineer with 7+ years of experience in API, Web, and Mobile Automation.</li>
-      <li>Worked across domains such as Healthcare, Aviation, Telecom, and Job Portals.</li>
-      <li>Built automation frameworks from scratch using Java, Python, JavaScript, Selenium, Playwright, Cypress, and Appium.</li>
-      <li>Experienced in API automation using REST Assured and Postman for reliable backend validation.</li>
-      <li>Integrated test automation into CI/CD pipelines using Jenkins, Git, and GitLab for faster, reliable releases.</li>
-    </ul>
-  </div>
-</section>
 
-<section>
-  <h2>🚀 Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Playwright ParaBank Framework</h3>
-      <p>End-to-end automation framework for banking using Playwright + TypeScript.</p>
-      <a href="https://github.com/Himen78/Febric_Automation_Playwright" target="_blank">GitHub →</a>
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section id="about" class="reveal">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow">Profile</div>
+
+        <h2 class="section-title">
+          Engineering Quality at Scale
+        </h2>
+
+        <p class="section-description">
+          I specialize in designing automation solutions that improve
+          software quality, accelerate release cycles, and reduce
+          repetitive testing effort.
+        </p>
+
+      </div>
+
+      <div class="profile-grid">
+
+        <div class="card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+
+          <h3>Senior SDET & Automation Architect</h3>
+
+          <ul class="profile-list">
+
+            <li>
+              8+ years of experience in Web, API, and Mobile Automation.
+            </li>
+
+            <li>
+              Strong experience building automation frameworks from scratch.
+            </li>
+
+            <li>
+              Expertise in Playwright, TypeScript, Java, Python,
+              Selenium, Cypress, and Appium.
+            </li>
+
+            <li>
+              Designed and maintained 200+ automated E2E scenarios.
+            </li>
+
+            <li>
+              Experience across Healthcare, Aviation, Telecom,
+              and Job Portal domains.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
+          <h3>US Healthcare</h3>
+
+          <p>
+            Worked on US Healthcare applications following
+            <strong>HIPAA compliance, data privacy, security,
+            and regulatory requirements</strong>.
+          </p>
+
+          <br />
+
+          <p>
+            Experienced in automating critical healthcare workflows
+            while maintaining reliable and secure test automation practices.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
-    <div class="card">
-      <h3>CI/CD Test Pipeline</h3>
-      <p>GitHub Actions integrated pipeline for automated testing and reporting.</p>
-      <a href="https://github.com/Himen78/CI-CD-Automation-Project" target="_blank">GitHub →</a>
+
+  </section>
+
+
+  <!-- =========================
+       AGENTIC AI
+  ========================== -->
+
+  <section id="ai" class="ai-section reveal">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow">AI Engineering</div>
+
+        <h2 class="section-title">
+          Agentic AI for Test Automation
+        </h2>
+
+        <p class="section-description">
+          Implementing AI agents to move beyond traditional automation
+          and automate parts of the complete software quality lifecycle.
+        </p>
+
+      </div>
+
+      <div class="grid">
+
+        <div class="card ai-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+
+          <h3>Jira MCP Automation Agent</h3>
+
+          <p>
+            Implemented Agentic AI using <strong>Claude and Jira MCP</strong>
+            to retrieve Jira/Zephyr test scenarios and streamline
+            automation workflows.
+          </p>
+
+        </div>
+
+
+        <div class="card ai-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+
+          <h3>Test Generation Agent</h3>
+
+          <p>
+            Developed AI agents to analyze test scenarios and
+            generate/implement corresponding Playwright automation
+            scenarios.
+          </p>
+
+        </div>
+
+
+        <div class="card ai-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <h3>AI Code Review Agent</h3>
+
+          <p>
+            Implemented AI-assisted code review to validate automation
+            code against framework and coding standards.
+          </p>
+
+        </div>
+
+
+        <div class="card ai-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+
+          <h3>Automation Report Agent</h3>
+
+          <p>
+            Developed AI-driven report analysis to summarize execution
+            results, identify failure patterns, and highlight potential
+            issues.
+          </p>
+
+        </div>
+
+
+        <div class="card ai-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-code-branch"></i>
+          </div>
+
+          <h3>Git Summary Agent</h3>
+
+          <p>
+            Implemented an AI agent to analyze Git changes and generate
+            concise development and automation summaries.
+          </p>
+
+        </div>
+
+
+        <div class="card ai-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+
+          <h3>AI-Assisted Automation</h3>
+
+          <p>
+            Applying Generative AI and Prompt Engineering to improve
+            test development, analysis, maintenance, and productivity.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
-</section>
 
-<section>
-  <h2>💡 Skills & Badges</h2>
-  <div class="card">
-    <span class="badge">Java</span>
-    <span class="badge">TypeScript</span>
-    <span class="badge">Selenium</span>
-    <span class="badge">Playwright</span>
-    <span class="badge">Appium</span>
-    <span class="badge">REST Assured</span>
-    <span class="badge">CI/CD</span>
-    <span class="badge">Docker</span>
-    <span class="badge">GitHub Actions</span>
-    <span class="badge">Jenkins</span>
-    <span class="badge">Azure DevOps</span>
-    <span class="badge">Generative AI</span>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>🏆 Experience & Achievements</h2>
-  <div class="card">
-    <p>With 7+ years of hands-on experience across Healthcare, Aviation, Telecommunications, and Job Portal domains, I specialize in developing and implementing automation solutions that enhance software quality, accelerate release cycles, and drive efficiency.</p>
 
-    <h3>🌟 Core Expertise:</h3>
-    <ul>
-      <li>Automation Frameworks: Selenium, Playwright, Cypress, Appium, REST Assured</li>
-      <li>Programming Languages: Java, Python, JavaScript, TypeScript</li>
-      <li>API Testing & Automation: Postman, REST Assured – Built API testing frameworks from scratch</li>
-      <li>Mobile Testing: Android & iOS (Appium, TestNG, Cucumber) – Designed end-to-end mobile automation frameworks</li>
-      <li>CI/CD & DevOps: Jenkins, GitLab, Docker, Azure – Integrated test automation into DevOps pipelines</li>
-      <li>Agile & SDLC: Scrum, Sprint Planning, Regression & Exploratory Testing</li>
-    </ul>
+  <!-- =========================
+       SKILLS
+  ========================== -->
 
-    <h3>🏆 Key Achievements:</h3>
-    <ul>
-      <li>Multi-Domain Expertise: Delivered test automation solutions across Healthcare, Aviation, Telecom, and Job Portals, ensuring domain-specific compliance and performance standards.</li>
-      <li>Web Automation: Designed and deployed Playwright, Cypress & Selenium automation frameworks for robust cross-browser testing.</li>
-      <li>API Automation: Built Postman & REST Assured frameworks from scratch for reliable API validation and monitoring.</li>
-      <li>Mobile Automation: Developed Appium frameworks for Android & iOS with advanced reporting and real-time execution tracking.</li>
-      <li>CI/CD Integration: Integrated test suites with Jenkins & GitLab for continuous testing and faster delivery pipelines.</li>
-    </ul>
-  </div>
-</section>
+  <section id="skills" class="reveal">
 
-<section>
-  <h2>📫 Get in Touch</h2>
-  <div class="card">
-    <p>Email: <a href="mailto:himenpatel2011@gmail.com">himenpatel2011@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/himen-patel" target="_blank">linkedin.com/in/himen-patel</a></p>
-  </div>
-</section>
+    <div class="container">
 
-<footer>
-  © 2025 Himen Patel • Built with 💙 for SDET & DevOps Excellence
-</footer>
+      <div class="section-header">
 
- <script>
+        <div class="eyebrow">Technology</div>
+
+        <h2 class="section-title">
+          Skills & Expertise
+        </h2>
+
+      </div>
+
+      <div class="card">
+
+        <div class="skill-group">
+
+          <h3>🤖 AI & Agentic Automation</h3>
+
+          <div class="badges">
+            <span class="badge">Agentic AI</span>
+            <span class="badge">Claude</span>
+            <span class="badge">Claude Code</span>
+            <span class="badge">Jira MCP</span>
+            <span class="badge">Generative AI</span>
+            <span class="badge">Prompt Engineering</span>
+            <span class="badge">AI Test Generation</span>
+            <span class="badge">AI Code Review</span>
+            <span class="badge">AI Report Analysis</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-group">
+
+          <h3>🎭 Automation</h3>
+
+          <div class="badges">
+            <span class="badge">Playwright</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">Selenium</span>
+            <span class="badge">Cypress</span>
+            <span class="badge">Appium</span>
+            <span class="badge">POM</span>
+            <span class="badge">E2E Automation</span>
+            <span class="badge">Cross-Browser Testing</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-group">
+
+          <h3>🔌 API & Backend</h3>
+
+          <div class="badges">
+            <span class="badge">Playwright APIContext</span>
+            <span class="badge">REST Assured</span>
+            <span class="badge">Postman</span>
+            <span class="badge">API Automation</span>
+            <span class="badge">CRUD Validation</span>
+            <span class="badge">UI–API Integration</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-group">
+
+          <h3>⚙️ Programming</h3>
+
+          <div class="badges">
+            <span class="badge">Java</span>
+            <span class="badge">Python</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">JavaScript</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-group">
+
+          <h3>🚀 CI/CD & DevOps</h3>
+
+          <div class="badges">
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">Jenkins</span>
+            <span class="badge">GitLab</span>
+            <span class="badge">Azure DevOps</span>
+            <span class="badge">Docker</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">Git</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-group">
+
+          <h3>📊 Performance & Methodologies</h3>
+
+          <div class="badges">
+            <span class="badge">Apache JMeter</span>
+            <span class="badge">Agile</span>
+            <span class="badge">Scrum</span>
+            <span class="badge">Test Strategy</span>
+            <span class="badge">Regression Testing</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================== -->
+
+  <section id="projects" class="reveal">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow">Selected Work</div>
+
+        <h2 class="section-title">
+          Projects & Frameworks
+        </h2>
+
+      </div>
+
+      <div class="grid">
+
+        <div class="card project-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+
+          <h3>Playwright Automation Framework</h3>
+
+          <p>
+            Scalable Playwright + TypeScript automation framework using
+            POM, reusable fixtures, utilities, hooks, and modular
+            architecture.
+          </p>
+
+          <div class="project-footer">
+
+            <a
+              class="project-link"
+              href="https://github.com/Himen78/Febric_Automation_Playwright"
+              target="_blank"
+            >
+              View on GitHub →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card project-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+
+          <h3>CI/CD Automation</h3>
+
+          <p>
+            GitHub Actions-based automation pipeline for continuous
+            test execution, reporting, and quality validation.
+          </p>
+
+          <div class="project-footer">
+
+            <a
+              class="project-link"
+              href="https://github.com/Himen78/CI-CD-Automation-Project"
+              target="_blank"
+            >
+              View on GitHub →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card project-card">
+
+          <div class="card-icon">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+
+          <h3>Agentic AI Automation</h3>
+
+          <p>
+            AI-powered automation workflow using Claude and Jira MCP
+            for test scenario analysis, automation generation,
+            code review, Git summaries, and report analysis.
+          </p>
+
+          <div class="project-footer">
+            <span class="project-link">
+              AI • Automation • MCP
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ACHIEVEMENTS
+  ========================== -->
+
+  <section id="achievements" class="reveal">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow">Impact</div>
+
+        <h2 class="section-title">
+          Experience & Achievements
+        </h2>
+
+      </div>
+
+      <div class="card">
+
+        <ul class="achievement-list">
+
+          <li>
+            <strong>8+ Years:</strong>
+            Professional experience in Software Test Automation and SDET practices.
+          </li>
+
+          <li>
+            <strong>200+ Scenarios:</strong>
+            Automated critical E2E business workflows across multiple domains.
+          </li>
+
+          <li>
+            <strong>Agentic AI:</strong>
+            Implemented AI agents for test generation, code review,
+            Git summaries, and automation report analysis.
+          </li>
+
+          <li>
+            <strong>Jira MCP:</strong>
+            Integrated Jira/Zephyr test scenarios into AI-assisted
+            automation workflows.
+          </li>
+
+          <li>
+            <strong>Healthcare:</strong>
+            Worked on US Healthcare applications following HIPAA,
+            data privacy, security, and regulatory requirements.
+          </li>
+
+          <li>
+            <strong>Cross-Browser:</strong>
+            Automated Chromium, WebKit, and Firefox with parallel
+            and headless execution.
+          </li>
+
+          <li>
+            <strong>API Automation:</strong>
+            Built robust API automation using Playwright APIContext
+            with authentication, CRUD, payments, and validations.
+          </li>
+
+          <li>
+            <strong>CI/CD:</strong>
+            Integrated automation into GitHub Actions, Jenkins,
+            and Azure DevOps pipelines.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section id="contact" class="reveal">
+
+    <div class="container">
+
+      <div class="card contact-card">
+
+        <div class="eyebrow">Let's Connect</div>
+
+        <h2>
+          Building the Future of
+          <span class="gradient-text">Intelligent Automation</span>
+        </h2>
+
+        <p>
+          Open to Senior SDET, SDET Lead, Automation Architect,
+          and AI-powered Test Automation opportunities.
+        </p>
+
+        <a
+          href="mailto:himenpatel2011@gmail.com"
+          class="btn btn-primary"
+        >
+          <i class="fa-solid fa-paper-plane"></i>
+          Get in Touch
+        </a>
+
+        <div class="socials">
+
+          <a
+            class="social"
+            href="https://github.com/Himen78"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a
+            class="social"
+            href="https://linkedin.com/in/himen-patel"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <a
+            class="social"
+            href="mailto:himenpatel2011@gmail.com"
+            aria-label="Email"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Himen Patel
+      • Senior SDET • Automation Architect • Agentic AI
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* Theme */
+
+    const themeToggle = document.getElementById("themeToggle");
+
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
+      themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
-    document.querySelector(".toggle").onclick = function () {
+
+    themeToggle.addEventListener("click", () => {
+
       document.body.classList.toggle("dark");
-      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-    };
-    AOS.init();
+
+      const isDark = document.body.classList.contains("dark");
+
+      localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+      );
+
+      themeToggle.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+
+    });
+
+
+    /* Scroll Reveal */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
   </script>
 
 </body>
