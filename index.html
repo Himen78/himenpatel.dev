@@ -7,7 +7,7 @@
   <meta name="description" content="Himen Patel is a Senior SDET and Automation Architect in Ahmedabad with 8+ years of Web, API and Mobile test automation. Playwright, TypeScript, CI/CD, Claude and Agentic AI." />
   <meta name="keywords" content="Senior SDET, Automation Architect, Playwright, TypeScript, Agentic AI, Claude, Jira MCP, API Automation, Selenium, Cypress, Appium, CI/CD, Ahmedabad" />
   <meta name="author" content="Himen Patel" />
-  <meta name="theme-color" content="#635bff" />
+  <meta name="theme-color" content="#6d4aff" />
 
   <!-- Social sharing previews (LinkedIn, WhatsApp, X, Slack) -->
   <meta property="og:type" content="profile" />
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Himen Patel | Senior SDET · Automation Architect" />
   <meta name="twitter:description" content="8+ years of Web, API and Mobile test automation. Playwright, TypeScript, CI/CD and Agentic AI." />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23635bff'/%3E%3Cstop offset='1' stop-color='%2300b8d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EHP%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236d4aff'/%3E%3Cstop offset='1' stop-color='%23ff6b4a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EHP%3C/text%3E%3C/svg%3E" />
 
   <script type="application/ld+json">
   {
@@ -55,26 +55,36 @@
 
   <style>
     :root {
-      --bg:#f6f8fc; --surface:#fff; --text:#172033; --muted:#5b6474;
-      --primary:#635bff; --secondary:#00b8d9; --border:#e5e7eb;
-      --card:rgba(255,255,255,.9); --shadow:0 15px 45px rgba(31,41,55,.08);
-      --gradient:linear-gradient(135deg,#635bff,#00b8d9);
-      --nav-bg:rgba(246,248,252,.82);
+      --bg:#f7f7fb; --surface:#fff; --text:#141127; --muted:#5d5a72;
+      --primary:#6d4aff; --primary-rgb:109,74,255;
+      --secondary:#0ea5a4; --secondary-rgb:14,165,164;
+      --accent:#ff6b4a; --accent-rgb:255,107,74;
+      --border:#e7e5f0;
+      --card:rgba(255,255,255,.78); --shadow:0 18px 50px rgba(40,26,110,.08);
+      --gradient:linear-gradient(120deg,#6d4aff 0%,#c043ff 45%,#ff6b4a 100%);
+      --gradient-cool:linear-gradient(120deg,#6d4aff,#0ea5a4);
+      --nav-bg:rgba(247,247,251,.78);
+      --blob1:rgba(109,74,255,.22); --blob2:rgba(255,107,74,.16); --blob3:rgba(14,165,164,.16);
       color-scheme:light;
     }
     :root.dark {
-      --bg:#080b14; --surface:#101522; --text:#f4f7fb; --muted:#a3adbd;
-      --primary:#8b7cff; --secondary:#22d3ee; --border:#20283a;
-      --card:rgba(16,21,34,.9); --shadow:0 20px 55px rgba(0,0,0,.35);
-      --gradient:linear-gradient(135deg,#8b7cff,#22d3ee);
-      --nav-bg:rgba(8,11,20,.86);
+      --bg:#07060f; --surface:#100e1d; --text:#f3f1ff; --muted:#a7a3c2;
+      --primary:#9b80ff; --primary-rgb:155,128,255;
+      --secondary:#2dd4bf; --secondary-rgb:45,212,191;
+      --accent:#ff8a6b; --accent-rgb:255,138,107;
+      --border:#231f3a;
+      --card:rgba(18,15,34,.72); --shadow:0 22px 60px rgba(0,0,0,.45);
+      --gradient:linear-gradient(120deg,#9b80ff 0%,#d96bff 45%,#ff8a6b 100%);
+      --gradient-cool:linear-gradient(120deg,#9b80ff,#2dd4bf);
+      --nav-bg:rgba(7,6,15,.72);
+      --blob1:rgba(155,128,255,.22); --blob2:rgba(255,138,107,.12); --blob3:rgba(45,212,191,.12);
       color-scheme:dark;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;scroll-padding-top:80px}
     body{
       font-family:Inter,system-ui,sans-serif;
-      background:radial-gradient(circle at top left,rgba(99,91,255,.12),transparent 30%),var(--bg);
+      background:var(--bg);
       color:var(--text);line-height:1.7;transition:background-color .3s,color .3s
     }
     a{color:inherit;text-decoration:none}
@@ -98,7 +108,7 @@
 
     /* ---------- Hero ---------- */
     .hero{min-height:680px;display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 0}
-    .hero:before{content:"";position:absolute;width:430px;height:430px;right:-130px;top:40px;background:rgba(99,91,255,.15);filter:blur(100px);border-radius:50%}
+    .hero:before{content:"";position:absolute;width:430px;height:430px;right:-130px;top:40px;background:rgba(var(--primary-rgb),.15);filter:blur(100px);border-radius:50%}
     .hero-content{position:relative;z-index:2;max-width:920px}
     .availability{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--border);background:var(--card);border-radius:30px;color:var(--muted);font-size:.82rem;font-weight:600;margin-bottom:1.5rem}
     .availability span{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 10px #22c55e;animation:pulse 2s infinite}
@@ -109,7 +119,7 @@
     .hero-description{max-width:760px;color:var(--muted);font-size:1.03rem;margin-bottom:2rem}
     .hero-buttons{display:flex;flex-wrap:wrap;gap:1rem}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 19px;border-radius:10px;font-weight:700;font-size:.9rem;transition:transform .3s,box-shadow .3s;cursor:pointer;border:0}
-    .btn-primary{background:var(--gradient);color:#fff;box-shadow:0 10px 25px rgba(99,91,255,.25)}
+    .btn-primary{background:var(--gradient);color:#fff;box-shadow:0 10px 25px rgba(var(--primary-rgb),.25)}
     .btn-primary:hover,.btn-secondary:hover{transform:translateY(-3px)}
     .btn-secondary{border:1px solid var(--border);background:var(--card);color:var(--text)}
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
@@ -125,9 +135,9 @@
     .section-description{color:var(--muted);max-width:780px;margin-top:10px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.25rem}
     .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.6rem;box-shadow:var(--shadow);transition:transform .3s,border-color .3s}
-    .card:hover{transform:translateY(-5px);border-color:rgba(99,91,255,.4)}
+    .card:hover{transform:translateY(-5px);border-color:rgba(var(--primary-rgb),.4)}
     .card.static:hover{transform:none}
-    .card-icon{width:47px;height:47px;display:grid;place-items:center;border-radius:12px;background:rgba(99,91,255,.12);color:var(--primary);margin-bottom:1rem;flex-shrink:0}
+    .card-icon{width:47px;height:47px;display:grid;place-items:center;border-radius:12px;background:rgba(var(--primary-rgb),.12);color:var(--primary);margin-bottom:1rem;flex-shrink:0}
     .card h3{font:700 1.1rem "Space Grotesk",sans-serif;margin-bottom:7px}
     .card p{color:var(--muted);font-size:.92rem}
     .card p + p{margin-top:.8rem}
@@ -135,7 +145,7 @@
     .profile-list,.experience-list,.achievement-list{list-style:none}
     .profile-list li{position:relative;padding-left:24px;margin-bottom:11px;color:var(--muted)}
     .profile-list li:before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:800}
-    .ai-card{background:linear-gradient(135deg,rgba(99,91,255,.12),rgba(0,184,217,.08)),var(--card)}
+    .ai-card{background:linear-gradient(135deg,rgba(var(--primary-rgb),.12),rgba(var(--secondary-rgb),.08)),var(--card)}
 
     /* ---------- Workflow strip ---------- */
     .flow{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:1.5rem;padding:1.1rem 1.3rem;border:1px dashed var(--border);border-radius:14px;background:var(--card)}
@@ -148,13 +158,13 @@
     .timeline:before{content:"";position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--primary),var(--secondary),transparent)}
     .job{position:relative;padding-left:56px}
     .job-dot{position:absolute;left:8px;top:28px;width:24px;height:24px;border-radius:50%;background:var(--surface);border:3px solid var(--primary)}
-    .job.current .job-dot{background:var(--primary);box-shadow:0 0 0 6px rgba(99,91,255,.18)}
+    .job.current .job-dot{background:var(--primary);box-shadow:0 0 0 6px rgba(var(--primary-rgb),.18)}
     .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;margin-bottom:.4rem}
     .job-company{font:700 1.2rem "Space Grotesk",sans-serif}
     .job-meta{color:var(--muted);font-size:.84rem;text-align:right}
     .job-date{color:var(--primary);font-weight:800;display:block}
     .job-role{color:var(--muted);font-weight:600;margin-bottom:10px}
-    .tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(99,91,255,.12);color:var(--primary);margin-left:6px;vertical-align:middle}
+    .tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(var(--primary-rgb),.12);color:var(--primary);margin-left:6px;vertical-align:middle}
     .experience-list li{position:relative;padding-left:20px;color:var(--muted);margin-bottom:8px;font-size:.92rem}
     .experience-list li:before{content:"";position:absolute;left:2px;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--primary)}
     .job .badges{margin-top:.9rem}
@@ -170,7 +180,7 @@
     .skills-grid .card h3 i{color:var(--primary)}
     .badges{display:flex;flex-wrap:wrap;gap:8px}
     .badge{padding:6px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--border);color:var(--muted);font-size:.78rem;font-weight:600;transition:.2s}
-    .badge.core{color:var(--primary);border-color:rgba(99,91,255,.45)}
+    .badge.core{color:var(--primary);border-color:rgba(var(--primary-rgb),.45)}
 
     /* ---------- Projects ---------- */
     .project-card{display:flex;flex-direction:column;min-height:240px}
@@ -181,7 +191,7 @@
 
     /* ---------- Impact ---------- */
     .impact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:1.25rem;align-items:stretch}
-    .impact-hero{display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,rgba(99,91,255,.14),rgba(0,184,217,.1)),var(--card)}
+    .impact-hero{display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,rgba(var(--primary-rgb),.14),rgba(var(--secondary-rgb),.1)),var(--card)}
     .impact-number{font:700 clamp(2.2rem,5vw,3.2rem)/1.1 "Space Grotesk",sans-serif;margin:.4rem 0 .8rem}
     .impact-number .arrow{color:var(--muted);font-size:.6em;margin:0 .3em;vertical-align:middle}
     .achievement-list{display:grid;gap:10px}
@@ -210,10 +220,113 @@
     .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
     .js .reveal.active{opacity:1;transform:none}
 
+
+    /* ================= Animations & colour polish ================= */
+    /* Floating gradient blobs behind everything */
+    .bg-fx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+    .bg-fx span{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
+    .bg-fx span:nth-child(1){width:520px;height:520px;background:var(--blob1);top:-160px;left:-120px;animation:drift1 22s ease-in-out infinite}
+    .bg-fx span:nth-child(2){width:460px;height:460px;background:var(--blob2);top:30%;right:-160px;animation:drift2 26s ease-in-out infinite}
+    .bg-fx span:nth-child(3){width:420px;height:420px;background:var(--blob3);bottom:-160px;left:25%;animation:drift3 30s ease-in-out infinite}
+    @keyframes drift1{50%{transform:translate(120px,90px) scale(1.15)}}
+    @keyframes drift2{50%{transform:translate(-110px,-70px) scale(.9)}}
+    @keyframes drift3{50%{transform:translate(90px,-110px) scale(1.1)}}
+    .hero:before{display:none}
+    .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+      background-size:56px 56px;opacity:.5;
+      -webkit-mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,#000 20%,transparent 75%);
+              mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,#000 20%,transparent 75%)}
+
+    /* Scroll progress bar */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:1100;background:var(--gradient);transform-origin:0 50%;transform:scaleX(0)}
+
+    /* Animated gradient text */
+    .gradient-text,.logo{background-size:200% auto;animation:shine 6s linear infinite}
+    @keyframes shine{to{background-position:200% center}}
+
+    /* Hero entrance */
+    .hero-content > *{opacity:0;transform:translateY(24px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+    .hero-content > :nth-child(1){animation-delay:.05s}
+    .hero-content > :nth-child(2){animation-delay:.15s}
+    .hero-content > :nth-child(3){animation-delay:.3s}
+    .hero-content > :nth-child(4){animation-delay:.42s}
+    .hero-content > :nth-child(5){animation-delay:.54s}
+    .hero-content > :nth-child(6){animation-delay:.66s}
+    @keyframes rise{to{opacity:1;transform:none}}
+
+    /* Rotating role (typewriter) */
+    .typed{background:var(--gradient-cool);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .caret{display:inline-block;width:2px;height:1.05em;background:var(--accent);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+
+    /* Buttons: sheen sweep + glow */
+    .btn{position:relative;overflow:hidden;isolation:isolate}
+    .btn-primary{background:var(--gradient);background-size:180% auto;box-shadow:0 10px 30px rgba(var(--primary-rgb),.35)}
+    .btn-primary:hover{background-position:100% center;box-shadow:0 14px 38px rgba(var(--accent-rgb),.35)}
+    .btn-primary:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;z-index:-1;
+      background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s}
+    .btn-primary:hover:after{left:130%}
+    .btn-secondary:hover{border-color:rgba(var(--primary-rgb),.5);color:var(--primary)}
+
+    /* Cards: gradient border + cursor spotlight */
+    .card{position:relative;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .card:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+      background:var(--gradient);opacity:0;transition:opacity .35s;
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
+      background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(var(--primary-rgb),.10),transparent 60%)}
+    .card:hover:before,.card:hover:after{opacity:1}
+    .card:hover{box-shadow:0 24px 60px rgba(var(--primary-rgb),.16)}
+    .card-icon{background:linear-gradient(135deg,rgba(var(--primary-rgb),.16),rgba(var(--accent-rgb),.14));transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+    .card:hover .card-icon{transform:rotate(-8deg) scale(1.12)}
+    .ai-card{background:linear-gradient(135deg,rgba(var(--primary-rgb),.10),rgba(var(--accent-rgb),.06)),var(--card)}
+
+    /* Stats */
+    .stat{transition:transform .3s,box-shadow .3s}
+    .stat:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(var(--primary-rgb),.18)}
+    .stat strong{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+    /* Accent touches */
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent)}
+    .eyebrow:before{content:"";width:22px;height:2px;border-radius:2px;background:var(--gradient)}
+    .tag{background:rgba(var(--accent-rgb),.12);color:var(--accent)}
+    .badge:hover{color:var(--primary);border-color:var(--primary);transform:translateY(-2px)}
+    .badge.core{background:rgba(var(--primary-rgb),.08)}
+    .profile-list li:before{color:var(--secondary)}
+    .flow-step{transition:.3s}
+    .flow-step:hover{background:var(--gradient);color:#fff;border-color:transparent}
+    .flow i{animation:nudge 1.6s ease-in-out infinite}
+    @keyframes nudge{50%{transform:translateX(4px);color:var(--accent)}}
+    .impact-number{background:var(--gradient);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite}
+
+    /* Timeline line draws in as you scroll */
+    .timeline:before{background:var(--border)}
+    .timeline-fill{position:absolute;left:19px;top:10px;width:2px;height:calc(100% - 20px);background:var(--gradient);transform-origin:top;transform:scaleY(var(--tl,0));border-radius:2px}
+    .job-dot{transition:background .4s,box-shadow .4s,transform .4s}
+    .job.lit .job-dot{border-color:var(--accent);transform:scale(1.1)}
+    .job.current .job-dot{animation:ping 2.2s infinite}
+    @keyframes ping{0%{box-shadow:0 0 0 0 rgba(var(--primary-rgb),.45)}80%,100%{box-shadow:0 0 0 14px rgba(var(--primary-rgb),0)}}
+
+    /* Staggered reveal for grid children */
+    .js .stagger > *{opacity:0;transform:translateY(26px) scale(.98);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+    .js .stagger.active > *{opacity:1;transform:none}
+    .js .reveal.active .section-title{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+
+    /* Socials */
+    .social:hover{background:var(--gradient);border-color:transparent;transform:translateY(-3px) rotate(-6deg)}
+
+    /* Back to top */
+    .to-top{position:fixed;right:20px;bottom:20px;z-index:900;width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;color:#fff;background:var(--gradient);
+      box-shadow:0 12px 30px rgba(var(--primary-rgb),.35);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .3s,transform .3s}
+    .to-top.show{opacity:1;transform:none;pointer-events:auto}
+    .to-top:hover{transform:translateY(-3px)}
+
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
       *,*:before,*:after{animation:none!important;transition:none!important}
-      .js .reveal{opacity:1;transform:none}
+      .js .reveal,.js .stagger > *,.hero-content > *{opacity:1;transform:none}
+      .bg-fx{display:none}
     }
 
     @media(max-width:900px){
@@ -235,6 +348,8 @@
       .job{padding-left:40px}
       .timeline:before{left:11px}
       .job-dot{left:0}
+      .timeline-fill{left:11px}
+      .bg-fx span{width:300px!important;height:300px!important}
       .job-meta{text-align:left}
       .card{padding:1.3rem}
       .stat strong{font-size:1.45rem}
@@ -244,6 +359,8 @@
 
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="bg-fx" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <nav aria-label="Primary">
   <div class="container nav-inner">
@@ -275,7 +392,7 @@
 
       <h1>Himen<br><span class="gradient-text">Patel</span></h1>
 
-      <p class="hero-tagline">Senior SDET &amp; Automation Architect, building AI-assisted test automation.</p>
+      <p class="hero-tagline">Senior SDET &amp; Automation Architect.<br>I build <span class="typed" id="typed" data-words="Playwright frameworks|API test suites|AI testing agents|CI/CD pipelines">Playwright frameworks</span><span class="caret" aria-hidden="true"></span></p>
 
       <p class="hero-description">
         <strong>8+ years</strong> automating Web, API and Mobile testing across
@@ -298,10 +415,10 @@
       </div>
 
       <div class="stats">
-        <div class="stat"><strong>8+</strong><span>Years in test automation</span></div>
-        <div class="stat"><strong>1,000+</strong><span>Test cases automated</span></div>
+        <div class="stat"><strong data-count="8" data-suffix="+">8+</strong><span>Years in test automation</span></div>
+        <div class="stat"><strong data-count="1000" data-suffix="+">1,000+</strong><span>Test cases automated</span></div>
         <div class="stat"><strong>4d → 4h</strong><span>Regression cycle time</span></div>
-        <div class="stat"><strong>4</strong><span>Industry domains</span></div>
+        <div class="stat"><strong data-count="4">4</strong><span>Industry domains</span></div>
       </div>
     </div>
   </div>
@@ -320,7 +437,7 @@
       </p>
     </div>
 
-    <div class="profile-grid">
+    <div class="profile-grid stagger">
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div>
         <h3>Core Profile</h3>
@@ -360,7 +477,7 @@
       </p>
     </div>
 
-    <div class="grid">
+    <div class="grid stagger">
       <div class="card ai-card">
         <div class="card-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
         <h3>Claude + Jira MCP</h3>
@@ -412,7 +529,8 @@
       <h2 class="section-title">Professional Experience</h2>
     </div>
 
-    <div class="timeline">
+    <div class="timeline" id="timeline">
+      <span class="timeline-fill" aria-hidden="true"></span>
 
       <article class="job current">
         <span class="job-dot" aria-hidden="true"></span>
@@ -538,7 +656,7 @@
       <p class="section-description">Highlighted skills are my primary stack.</p>
     </div>
 
-    <div class="skills-grid">
+    <div class="skills-grid stagger">
       <div class="card static">
         <h3><i class="fa-solid fa-robot" aria-hidden="true"></i> AI &amp; Agentic Automation</h3>
         <div class="badges">
@@ -596,7 +714,7 @@
       <h2 class="section-title">Projects &amp; Automation</h2>
     </div>
 
-    <div class="grid">
+    <div class="grid stagger">
       <div class="card project-card">
         <div class="card-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
         <h3>Playwright Automation Framework</h3>
@@ -634,7 +752,7 @@
       <h2 class="section-title">Key Highlights</h2>
     </div>
 
-    <div class="impact-grid">
+    <div class="impact-grid stagger">
       <div class="card static impact-hero">
         <div class="card-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
         <h3>Regression Acceleration</h3>
@@ -663,7 +781,7 @@
       <h2 class="section-title">Education &amp; Certification</h2>
     </div>
 
-    <div class="education-grid">
+    <div class="education-grid stagger">
       <div class="card edu-card">
         <div class="card-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
         <div>
@@ -715,6 +833,7 @@
   © <span id="year">2026</span> Himen Patel · Senior SDET · Automation Architect · Agentic AI
 </footer>
 
+<button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -791,6 +910,82 @@
       showToast(email);
     }
   });
+
+
+  // ===== Animations =====
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Staggered children reveal
+  const staggerObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      [...e.target.children].forEach((c, i) => c.style.transitionDelay = (i * 90) + "ms");
+      e.target.classList.add("active");
+      staggerObs.unobserve(e.target);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".stagger").forEach(el => staggerObs.observe(el));
+
+  // Count-up stats
+  function countUp(el) {
+    const target = +el.dataset.count, suffix = el.dataset.suffix || "";
+    if (reduceMotion) return;
+    const start = performance.now(), dur = 1600;
+    (function tick(now) {
+      const t = Math.min((now - start) / dur, 1), eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * eased).toLocaleString("en-US") + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    })(start);
+  }
+  setTimeout(() => document.querySelectorAll("[data-count]").forEach(countUp), 700);
+
+  // Typewriter roles
+  const typed = document.getElementById("typed");
+  if (typed && !reduceMotion) {
+    const words = typed.dataset.words.split("|");
+    let w = 0, c = words[0].length, deleting = false;
+    (function loop() {
+      const word = words[w];
+      typed.textContent = word.slice(0, c);
+      let delay = deleting ? 45 : 85;
+      if (deleting && c === 0) { deleting = false; w = (w + 1) % words.length; delay = 300; }
+      else if (!deleting && c === words[w].length) { deleting = true; delay = 2200; }
+      c += deleting ? -1 : 1;
+      if (!deleting && c > words[w].length) c = words[w].length;
+      setTimeout(loop, delay);
+    })();
+  }
+
+  // Card cursor spotlight
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("pointermove", e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      card.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
+
+  // Scroll-driven: progress bar, timeline fill, back-to-top
+  const progress = document.getElementById("progress");
+  const timeline = document.getElementById("timeline");
+  const jobs = timeline ? [...timeline.querySelectorAll(".job")] : [];
+  const toTop = document.getElementById("toTop");
+  let ticking = false;
+  function onScroll() {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = "scaleX(" + (h > 0 ? scrollY / h : 0) + ")";
+    toTop.classList.toggle("show", scrollY > 700);
+    if (timeline) {
+      const r = timeline.getBoundingClientRect(), mark = innerHeight * 0.6;
+      const p = Math.min(Math.max((mark - r.top) / r.height, 0), 1);
+      timeline.style.setProperty("--tl", p);
+      jobs.forEach(j => j.classList.toggle("lit", j.getBoundingClientRect().top < mark));
+    }
+    ticking = false;
+  }
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+  toTop.addEventListener("click", () => scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }));
 
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
